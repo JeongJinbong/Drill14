@@ -39,9 +39,9 @@ def init():
 
     balls = [Ball() for _ in range(100)]
     for ball in balls:
+        ball.set_background(server.background)
         game_world.add_object(ball,1)
         game_world.add_collision_pair('boy:ball', None, ball)
-        ball.set_background(server.background)
 
 
 

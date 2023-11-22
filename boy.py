@@ -296,7 +296,8 @@ class Boy:
         pass
 
     def get_bb(self):
-        return self.x - 20, self.y - 50, self.x + 20, self.y + 50
+        sx, sy = self.x - self.bg.window_left, self.y - self.bg.window_bottom
+        return sx - 20, sy - 50, sx + 20, sy + 50
 
     # fill here
     def handle_collision(self, group, other):

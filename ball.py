@@ -15,7 +15,6 @@ class Ball:
     def set_background(self, bg):
         self.bg = bg
 
-
     def draw(self):
         sx, sy = self.x - self.bg.window_left, self.y - self.bg.window_bottom
         self.image.draw(sx, sy)
@@ -25,7 +24,8 @@ class Ball:
         pass
 
     def get_bb(self):
-        return self.x - self.bg.window_left- 10, self.y- self.bg.window_bottom - 10, self.x- self.bg.window_left + 10, self.y- self.bg.window_bottom + 10
+        sx, sy = self.x - self.bg.window_left, self.y - self.bg.window_bottom
+        return sx -10, sy- 10, sx + 10,sy + 10
 
     def handle_collision(self, group, other):
         match group:
